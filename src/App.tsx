@@ -77,7 +77,7 @@ function App() {
     return true;
   }
 
-  const activeRoute = routes.some(item => item.path === route) ? route : '/home';
+  const activeRoute = routes.some(item => item.path === route) || route === '/cart' ? route : '/home';
   const filteredFoods = foods.filter(food => (food.name + ' ' + food.category + ' ' + food.description).toLowerCase().includes(search.toLowerCase()));
   const commonProps = { foods: filteredFoods, favorites, cart, onAdd: add, onChange: change, onFavorite: toggleFavorite, search, setSearch };
 
