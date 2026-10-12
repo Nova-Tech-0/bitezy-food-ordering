@@ -1,0 +1,75 @@
+[
+  {
+    "name": "Navigate pages and add a meal to the persistent bag",
+    "sanity": true,
+    "viewport": "desktop",
+    "covers": [
+      "multi-page navigation",
+      "menu filtering",
+      "add to cart",
+      "cart persistence after reload"
+    ],
+    "description": "Verifies page navigation and that a selected meal is available in the bag after refresh.",
+    "steps": [
+      "Open Explore menu",
+      "Filter to Nigerian meals and add Smoky Jollof Rice",
+      "Open My bag",
+      "Refresh the page"
+    ],
+    "expected": "The separate menu and bag views work, the bag count and selected meal remain available after refresh."
+  },
+  {
+    "name": "Save a favourite and view the saved meals page",
+    "viewport": "mobile",
+    "covers": [
+      "mobile bottom navigation",
+      "favourites toggle",
+      "favourites persistence",
+      "empty state"
+    ],
+    "description": "Checks the mobile navigation and favourites page use saved items.",
+    "steps": [
+      "Open the menu on a mobile viewport",
+      "Tap the heart on a meal",
+      "Open Saved from the bottom navigation",
+      "Refresh the page"
+    ],
+    "expected": "The saved meal appears on the separate Favourites page and remains saved after refresh."
+  },
+  {
+    "name": "Place a demo order and review order history",
+    "viewport": "desktop",
+    "covers": [
+      "cart quantity controls",
+      "delivery fee calculation",
+      "checkout validation",
+      "demo order creation",
+      "order history persistence"
+    ],
+    "description": "Checks checkout validation, total calculations and saved order summaries.",
+    "steps": [
+      "Add two meals to the bag",
+      "Open My bag and continue to checkout",
+      "Enter a name and phone number and submit",
+      "Open My orders"
+    ],
+    "expected": "The demo order is recorded with its items, delivery address and total, and appears on the separate My orders page."
+  },
+  {
+    "name": "Search and filter the menu with no-results recovery",
+    "viewport": "mobile",
+    "covers": [
+      "global search",
+      "sort meals",
+      "empty search results",
+      "filter reset"
+    ],
+    "description": "Verifies searching and sorting work and empty results provide a recovery action.",
+    "steps": [
+      "Search for a phrase that matches no meals",
+      "Verify the empty state appears",
+      "Select Clear all filters"
+    ],
+    "expected": "A clear empty state appears and the menu is restored when filters are cleared."
+  }
+]
